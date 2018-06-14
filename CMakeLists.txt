@@ -3,5 +3,5 @@ project(starcraft_model)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES main.cpp src/Unit.cpp)
+set(SOURCE_FILES main.cpp src/Unit.cpp src/princ/Terran.cpp src/princ/Protoss.cpp src/princ/Zerg.cpp)
 add_executable(starcraft_model ${SOURCE_FILES})
