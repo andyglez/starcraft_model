@@ -10,6 +10,7 @@ class Unit{
     string _name;
 
 protected:
+    Unit() { }
     Unit(int life, int attack, int defense, string&& name) :
             _life(life), _attack(attack), _defense(defense), _name(name){}
 

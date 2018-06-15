@@ -63,5 +63,22 @@ With this structure there must be defined some rules for constructing objects:
   * Next, the constructor for all member objects is called in the order in which the member objects appear in the class.
   * Finally, the constructor of the class itself is called.
 
+The first problem with this solution is that marking a virtual inheritance has an extra overhead on efficiency and the second
+is that despite the ambiguity sometimes is still necessary to access data from base class.
+
 There is, of course, a better and more complete tool for removing ambiguity when using multiple inheritance that is, referencing
 its code path or semantic path, although it isn't the most comfortable one.
+
+~~~cpp
+class Infested : public Terran, public Zerg{
+public:
+    Infested(int life, int attack, int defense, int regen, string &&name) :
+            Unit(life, attack, defense, (string &&) name) { }
+};
+
+class Hybrid : public Protoss, public Zerg{
+public:
+    Hybrid(int life, int attack, int defense, int shield, int shield_regen, int life_regen, string &&name) :
+            Unit(life, attack, defense, (string &&)name) { }
+};
+~~~
