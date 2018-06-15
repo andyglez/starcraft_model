@@ -3,8 +3,8 @@
 //
 #include "../Unit.cpp"
 
-class Terran : Unit{
-
-public:
-    Terran(int life, int attack, int defense, string &&name) : Unit(life, attack, defense, name) { }
+class Terran : public Unit{
+protected:
+    Terran(int life, int attack, int defense, string&& name) :
+            Unit(life, attack, defense, (string&&)name) {}
 };

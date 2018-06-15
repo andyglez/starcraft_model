@@ -4,10 +4,10 @@
 
 #include "../Unit.cpp"
 
-class Zerg : Unit{
+class Zerg : public Unit{
     int _regen_life;
-public:
-    Zerg(int life, int attack, int defense, string &&name, int regen) :
-            Unit(life, attack, defense, name), _regen_life(regen) { }
+protected:
+    Zerg(int life, int attack, int defense, int regen, string &&name) :
+            Unit(life, attack, defense, (string &&)name), _regen_life(regen) { }
 };
 

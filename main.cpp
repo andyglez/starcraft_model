@@ -1,9 +1,10 @@
 #include <iostream>
-#include "src/princ/Terran.cpp"
+#include "src/princ/Zerg.cpp"
 
 using namespace std;
 
 int main() {
-    Terran a(10, 3, 1, "Marine");
+    //Zerg a(10, 3, 1, 4, "Zerg");
+    //a.print();
     return 0;
 }

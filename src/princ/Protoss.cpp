@@ -4,10 +4,10 @@
 
 #include "../Unit.cpp"
 
-class Protoss : Unit{
+class Protoss : public Unit{
     int _shield, _regen_shield;
-public:
-    Protoss(int life, int attack, int defense, string &&name, int shield, int regen) :
-            Unit(life, attack, defense, name), _shield(shield), _regen_shield(regen) { }
+protected:
+    Protoss(int life, int attack, int defense, int shield, int regen, string &&name) :
+            _shield(shield), _regen_shield(regen), Unit(life, attack, defense,(string &&) name) { }
 };
 

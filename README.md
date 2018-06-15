@@ -45,3 +45,5 @@ in code.
 
 Protected means that, only from within the classes that are inheriting from this base class, members or fields declared
 in a protected section will be accessible.
+
+> Private members of a base class are inherited by a subclass but are not accessible in subclass code.
