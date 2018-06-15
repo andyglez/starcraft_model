@@ -1,12 +1,10 @@
 ## Starcraft class model ##
 
 This project represents C++ introduction to class modeling and inheritance along with some topics inevitable to these
-features in the language. For instance:
-  * Types of inheritance or access levels.
-  * Memory structure of inheritance.
+features in the language.
 
 
-## Types of Inheritance ##
+**Access Levels**
 
 ~~~cpp
 class Unit{
@@ -47,3 +45,23 @@ Protected means that, only from within the classes that are inheriting from this
 in a protected section will be accessible.
 
 > Private members of a base class are inherited by a subclass but are not accessible in subclass code.
+
+**Memory structure of inheritance**
+
+C++ supports multiple inheritance which forces to have a well-define structure of the class or there will be ambiguity at
+its own concept.
+
+A class is mainly a data container so its size in memory depends on its fields and members.
+Inheritance behaves like a wrapper for such data container inside another data container. In other words,
+a subclass is defined the same way, but now it contains all data of its parent class and it's own fields and members.
+
+> One way of not containing data from a parent class is what C++ call *virtual inheritance*
+
+With this structure there must be defined some rules for constructing objects:
+  * First, the constructor of any virtual base classes is called in the order in which the classes are inherited.
+  * Then the constructor for all non-virtual base classes is called in the order in which the classes are inherited.
+  * Next, the constructor for all member objects is called in the order in which the member objects appear in the class.
+  * Finally, the constructor of the class itself is called.
+
+There is, of course, a better and more complete tool for removing ambiguity when using multiple inheritance that is, referencing
+its code path or semantic path, although it isn't the most comfortable one.
